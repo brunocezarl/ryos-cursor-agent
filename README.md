@@ -17,8 +17,8 @@ ferramentas para validar código e design seguindo os princípios ryOS.
 ## Instalação
 
 ```bash
-git clone https://github.com/seu-usuario/ryos-mcp-agent.git
-cd ryos-mcp-agent
+git clone https://github.com/brunocezarl/ryos-cursor-agent.git
+cd ryos-cursor-agent
 npm install
 npm run build
 ```
