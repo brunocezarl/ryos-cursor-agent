@@ -1,20 +1,20 @@
 # ryOS MCP Agent 🚀
 
-Servidor MCP em TypeScript para auxiliar no desenvolvimento do ryOS dentro do Cursor.
+TypeScript MCP server to assist with ryOS development within Cursor.
 
-## Visão Geral
+## Overview
 
-O ryOS combina estética nostálgica (Mac System 7, Aqua, Windows XP/98) com experiência moderna.
-Este agente fornece conhecimento integrado sobre filosofia, padrões e apps, além de
-ferramentas para validar código e design seguindo os princípios ryOS.
+ryOS combines nostalgic aesthetics (Mac System 7, Aqua, Windows XP/98) with modern experience.
+This agent provides integrated knowledge about philosophy, patterns, and apps, plus
+tools to validate code and design following ryOS principles.
 
-## Requisitos
+## Requirements
 
-- Node.js 18+ na máquina local
-- npm ou pnpm para instalar dependências
-- Cursor IDE com suporte a MCP
+- Node.js 18+ on local machine
+- npm or pnpm to install dependencies
+- Cursor IDE with MCP support
 
-## Instalação
+## Installation
 
 ```bash
 git clone https://github.com/brunocezarl/ryos-cursor-agent.git
@@ -23,45 +23,45 @@ npm install
 npm run build
 ```
 
-### Desenvolvimento
+### Development
 
 ```bash
 npm run dev
 ```
 
-### Produção
+### Production
 
 ```bash
 npm start
 ```
 
-## Conexão com Cursor
+## Cursor Connection
 
-1. **Localize o arquivo de configuração MCP:**
+1. **Locate the MCP configuration file:**
    - Windows: `%LOCALAPPDATA%\Cursor\User\mcp_servers.json`
    - macOS: `~/Library/Application Support/Cursor/User/mcp_servers.json`
    - Linux: `~/.config/Cursor/User/mcp_servers.json`
 
-2. **Adicione a configuração do ryOS Agent:**
+2. **Add the ryOS Agent configuration:**
    ```json
    {
      "mcpServers": {
        "ryos-agent": {
          "command": "node",
-         "args": ["/caminho/para/ryos-mcp-agent/dist/index.js"],
+         "args": ["/path/to/ryos-mcp-agent/dist/index.js"],
          "env": {}
        }
      }
    }
    ```
    
-   **Importante:** Substitua `/caminho/para/ryos-mcp-agent/` pelo caminho real do seu projeto.
+   **Important:** Replace `/path/to/ryos-mcp-agent/` with the actual path to your project.
 
-3. **Reinicie o Cursor** completamente para carregar o novo servidor.
+3. **Restart Cursor** completely to load the new server.
 
-## Como Usar
+## How to Use
 
-Após configurar, use o agente no chat do Cursor:
+After configuration, use the agent in Cursor chat:
 
 ```
 @ryos-agent validate_ryos_code
@@ -75,84 +75,84 @@ Após configurar, use o agente no chat do Cursor:
 @ryos-agent check_ryos_design
 ```
 
-## Ferramentas Disponíveis
+## Available Tools
 
-| Ferramenta | Descrição |
-|------------|-----------|
-| `validate_ryos_code` | Analisa trechos TS/TSX/CSS e aponta aderência aos padrões ryOS |
-| `check_ryos_design` | Verifica se o componente respeita a estética minimalista |
-| `get_ryos_philosophy` | Retorna a filosofia completa do ryOS |
-| `get_ryos_patterns` | Lista padrões técnicos e de design |
-| `get_ryos_apps_guide` | Descreve apps oficiais e interações |
-| `get_ryos_example` | Fornece componente exemplo com boas práticas |
-| `get_ryos_best_practices` | Destaca recomendações gerais |
+| Tool | Description |
+|------|-------------|
+| `validate_ryos_code` | Analyzes TS/TSX/CSS snippets and points out adherence to ryOS patterns |
+| `check_ryos_design` | Verifies if the component respects minimalist aesthetics |
+| `get_ryos_philosophy` | Returns the complete ryOS philosophy |
+| `get_ryos_patterns` | Lists technical and design patterns |
+| `get_ryos_apps_guide` | Describes official apps and interactions |
+| `get_ryos_example` | Provides example component with best practices |
+| `get_ryos_best_practices` | Highlights general recommendations |
 
-## Exemplos de Uso
+## Usage Examples
 
-### Validar código
+### Validate code
 ```
 @ryos-agent validate_ryos_code
 ```
-Cole seu código TSX/TS/CSS para análise automática.
+Paste your TSX/TS/CSS code for automatic analysis.
 
-### Consultar filosofia
+### Consult philosophy
 ```
 @ryos-agent get_ryos_philosophy
 ```
 
-### Ver exemplo de componente
+### View component example
 ```
 @ryos-agent get_ryos_example
 ```
 
-## Filosofia ryOS
+## ryOS Philosophy
 
-- **Nostalgia + Modernidade**: Estética clássica (Mac System 7, Windows XP) com tecnologia atual
-- **Privacidade Total**: 100% client-side, localStorage apenas, zero armazenamento em servidor
-- **Apps Interconectados**: Compartilhamento de estado entre aplicações
-- **Tailwind-Only**: Apenas Tailwind CSS para estilos, sem CSS inline
-- **Animações Suaves**: Transições responsivas e microinterações
+- **Nostalgia + Modernity**: Classic aesthetics (Mac System 7, Windows XP) with current technology
+- **Total Privacy**: 100% client-side, localStorage only, zero server storage
+- **Interconnected Apps**: State sharing between applications
+- **Tailwind-Only**: Only Tailwind CSS for styles, no inline CSS
+- **Smooth Animations**: Responsive transitions and microinteractions
 
-## Stack Técnica
+## Technical Stack
 
 - **Frontend**: React + TypeScript
-- **Estilos**: Tailwind CSS
-- **Persistência**: localStorage
-- **Arquitetura**: Single-page app, sem backend dedicado
+- **Styles**: Tailwind CSS
+- **Persistence**: localStorage
+- **Architecture**: Single-page app, no dedicated backend
 - **Build**: Vite + ESBuild
 
-## Contribuindo
+## Contributing
 
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
+1. Fork the project
+2. Create a branch for your feature (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
 
 ## Troubleshooting
 
-### O agente não aparece no Cursor
-- Verifique se o caminho no `mcp_servers.json` está correto
-- Confirme que `npm run build` executou sem erros
-- Reinicie o Cursor completamente
-- Verifique se o arquivo `dist/index.js` existe
+### Agent doesn't appear in Cursor
+- Check if the path in `mcp_servers.json` is correct
+- Confirm that `npm run build` executed without errors
+- Restart Cursor completely
+- Verify that the `dist/index.js` file exists
 
-### Erro de conexão
-- Verifique se Node.js 18+ está instalado
-- Confirme que todas as dependências foram instaladas (`npm install`)
+### Connection error
+- Check if Node.js 18+ is installed
+- Confirm that all dependencies were installed (`npm install`)
 
-## Próximos Passos
+## Next Steps
 
-- [ ] Expandir guias com exemplos adicionais
-- [ ] Incluir verificações específicas para temas (system7, macosx, xp, win98)
-- [ ] Adicionar integração com ferramentas de linting do projeto principal
-- [ ] Suporte a mais tipos de arquivo (JSX, Vue, etc.)
+- [ ] Expand guides with additional examples
+- [ ] Include specific checks for themes (system7, macosx, xp, win98)
+- [ ] Add integration with main project linting tools
+- [ ] Support for more file types (JSX, Vue, etc.)
 
-## Licença
+## License
 
-MIT License - veja [LICENSE](LICENSE) para detalhes.
+MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-**Construído para manter o equilíbrio ryOS entre nostalgia e inovação.** 🎨✨
+**Built to maintain the ryOS balance between nostalgia and innovation.** 🎨✨
 
